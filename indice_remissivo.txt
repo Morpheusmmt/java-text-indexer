@@ -1,2 +1,7 @@
+práticas [1, 3]
+código [1, 3, 4]
 software [2, 4]
+programação [1, 3]
+manutenção [4]
 leitura [4]
+programadores [4]

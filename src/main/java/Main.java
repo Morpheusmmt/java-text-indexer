@@ -3,8 +3,8 @@ import java.util.*;
 
 // Classe que representa uma palavra e as linhas onde ela aparece
 class Palavra {
-    String palavra; // A palavra em si
-    LinkedList<Integer> linhas; // Lista de linhas onde a palavra aparece
+    String palavra; 
+    LinkedList<Integer> linhas; 
 
     // Construtor para inicializar a palavra e a lista de linhas
     public Palavra(String palavra, int linha) {
@@ -29,8 +29,8 @@ class Palavra {
 
 // Classe que gerencia o índice remissivo
 class IndiceRemissivo {
-    private static final int TAMANHO_TABELA = 26; // Tamanho da tabela hash (uma letra para cada posição)
-    private LinkedList<Palavra>[] tabelaHash; // Tabela hash para armazenar as palavras
+    private static final int TAMANHO_TABELA = 26; 
+    private LinkedList<Palavra>[] tabelaHash; 
 
     // Construtor para inicializar a tabela hash
     @SuppressWarnings("unchecked")
@@ -49,33 +49,33 @@ class IndiceRemissivo {
 
     // Método para adicionar uma palavra à tabela hash
     public void adicionarPalavra(String palavra, int linha) {
-        if (palavra == null || palavra.trim().isEmpty()) return; // Ignorar palavras vazias
+        if (palavra == null || palavra.trim().isEmpty()) return; 
         char primeiraLetra = palavra.charAt(0);
         int indice = hash(primeiraLetra);
 
         // Verificar se a palavra já existe na lista encadeada correspondente
         for (Palavra p : tabelaHash[indice]) {
-            if (p.palavra.equalsIgnoreCase(palavra)) { // Comparação case-insensitive
-                p.adicionarLinha(linha); // Adicionar a linha à palavra existente
+            if (p.palavra.equalsIgnoreCase(palavra)) { 
+                p.adicionarLinha(linha);
                 return;
             }
         }
 
         // Se a palavra não existir, criar uma nova entrada na lista encadeada
-        tabelaHash[indice].add(new Palavra(palavra.toLowerCase(), linha)); // Armazenar em minúsculas
+        tabelaHash[indice].add(new Palavra(palavra.toLowerCase(), linha)); 
     }
 
     // Método para gerar o índice remissivo e salvar em um arquivo
     public void gerarIndiceRemissivo(Set<String> palavrasChave, String arquivoSaida) throws IOException {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(arquivoSaida))) {
             for (String palavra : palavrasChave) {
-                if (palavra == null || palavra.trim().isEmpty()) continue; // Ignorar palavras-chave vazias
+                if (palavra == null || palavra.trim().isEmpty()) continue; 
                 char primeiraLetra = palavra.charAt(0);
                 int indice = hash(primeiraLetra);
 
                 // Buscar a palavra na tabela hash e escrever no arquivo de saída
                 for (Palavra p : tabelaHash[indice]) {
-                    if (p.palavra.equalsIgnoreCase(palavra)) { // Comparação case-insensitive
+                    if (p.palavra.equalsIgnoreCase(palavra)) { 
                         writer.write(p.palavra + " " + p.linhas.toString());
                         writer.newLine();
                         break;
@@ -96,11 +96,11 @@ public class Main {
             String linha;
             int numeroLinha = 1;
             while ((linha = reader.readLine()) != null) {
-                // Dividir a linha em palavras, considerando pontuação e espaços
+                
                 String[] palavras = linha.split("[^a-zA-ZÀ-ú]+");
                 for (String palavra : palavras) {
                     if (!palavra.isEmpty()) {
-                        indice.adicionarPalavra(palavra, numeroLinha); // Adicionar cada palavra ao índice
+                        indice.adicionarPalavra(palavra, numeroLinha); 
                     }
                 }
                 numeroLinha++;
