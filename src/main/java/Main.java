@@ -27,10 +27,11 @@ class IndiceRemissivo {
     private static final int TAMANHO_TABELA = 26; // Uma posição para cada letra do alfabeto
     private LinkedList<Palavra>[] tabelaHash;
 
+    @SuppressWarnings("unchecked")
     public IndiceRemissivo() {
-        tabelaHash = new LinkedList[TAMANHO_TABELA];
+        tabelaHash = (LinkedList<Palavra>[]) new LinkedList[TAMANHO_TABELA];
         for (int i = 0; i < TAMANHO_TABELA; i++) {
-            tabelaHash[i] = new LinkedList<>();
+            tabelaHash[i] = new LinkedList<Palavra>();
         }
     }
 
