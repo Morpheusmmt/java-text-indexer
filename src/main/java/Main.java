@@ -43,7 +43,8 @@ class IndiceRemissivo {
 
     // Função hash para mapear a primeira letra da palavra a um índice na tabela
     private int hash(char letra) {
-        return Character.toLowerCase(letra) - 'a';
+        int index = Character.toLowerCase(letra) - 'a';
+        return (index >= 0 && index < TAMANHO_TABELA) ? index : 0;
     }
 
     // Método para adicionar uma palavra à tabela hash
