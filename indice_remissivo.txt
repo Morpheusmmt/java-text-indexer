@@ -1,4 +1,2 @@
-teste [3, 5]
-exemplo [2]
-arquivo [2]
-palavras [3, 4]
+software [2, 4]
+leitura [4]
