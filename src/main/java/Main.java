@@ -56,6 +56,7 @@ class IndiceRemissivo {
     public void gerarIndiceRemissivo(Set<String> palavrasChave, String arquivoSaida) throws IOException {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(arquivoSaida))) {
             for (String palavra : palavrasChave) {
+                if (palavra == null || palavra.trim().isEmpty()) continue;
                 char primeiraLetra = palavra.charAt(0);
                 int indice = hash(primeiraLetra);
 
