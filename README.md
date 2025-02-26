@@ -37,36 +37,53 @@ Coloque o arquivo palavras_chave.txt com as palavras-chave desejadas (uma por li
 Compile e execute o programa:
 
 bash
+
 Copiar
+
 Editar
+
 javac Main.java
+
 java Main
+
 O índice remissivo será gerado no arquivo indice_remissivo.txt.
+
 
 Arquivos de Entrada
 texto.txt: O arquivo de texto que será analisado para criar o índice remissivo.
 palavras_chave.txt: Arquivo com as palavras-chave para serem incluídas no índice. Cada palavra deve estar em uma linha separada.
 Exemplo de Arquivo palavras_chave.txt
+
 bash
+
 Copiar
+
 Editar
+
 java
+
 hash
+
 index
+
 Exemplo de Saída (indice_remissivo.txt)
 O índice gerado será salvo no arquivo indice_remissivo.txt e terá o seguinte formato:
 
 css
+
 Copiar
+
 Editar
+
 java [1, 5, 7]
+
 hash [3, 10]
+
 index [2, 8, 15]
+
 Onde:
 
 Cada linha mostra a palavra e as linhas onde ela ocorre no texto.
 Contribuições
 Se você deseja contribuir para este projeto, fique à vontade para fazer um fork e enviar um pull request.
 
-Licença
-Este projeto é licenciado sob a MIT License - veja o arquivo LICENSE para mais detalhes.
