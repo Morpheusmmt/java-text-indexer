@@ -1,0 +1,5 @@
+
+Este é um arquivo de exemplo.
+Ele contém várias palavras para teste.
+Algumas palavras se repetem no texto.
+Este é apenas um teste simples.
