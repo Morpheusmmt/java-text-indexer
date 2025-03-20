@@ -30,60 +30,48 @@ O projeto é composto pelas seguintes classes:
 1. Clone este repositório para o seu computador:
    ```bash
    git clone https://github.com/seu-usuario/indice-remissivo.git
-Coloque o arquivo texto.txt com o conteúdo do texto no diretório do projeto.
+   ```
 
-Coloque o arquivo palavras_chave.txt com as palavras-chave desejadas (uma por linha).
+2. Coloque o arquivo `texto.txt` com o conteúdo do texto no diretório do projeto.
 
-Compile e execute o programa:
+3. Coloque o arquivo `palavras_chave.txt` com as palavras-chave desejadas (uma palavra por linha).
 
-bash
+4. Compile e execute o programa:
 
-Copiar
+   ```bash
+   javac Main.java
+   java Main
+   ```
 
-Editar
+O índice remissivo será gerado no arquivo `indice_remissivo.txt`.
 
-javac Main.java
+## Arquivos de Entrada
 
-java Main
+- **texto.txt**: O arquivo de texto que será analisado para criar o índice remissivo.
+- **palavras_chave.txt**: Arquivo com as palavras-chave para serem incluídas no índice. Cada palavra deve estar em uma linha separada.
 
-O índice remissivo será gerado no arquivo indice_remissivo.txt.
+### Exemplo de Arquivo `palavras_chave.txt`
 
-
-Arquivos de Entrada
-texto.txt: O arquivo de texto que será analisado para criar o índice remissivo.
-palavras_chave.txt: Arquivo com as palavras-chave para serem incluídas no índice. Cada palavra deve estar em uma linha separada.
-Exemplo de Arquivo palavras_chave.txt
-
-bash
-
-Copiar
-
-Editar
-
+```text
 java
-
 hash
-
 index
+```
 
-Exemplo de Saída (indice_remissivo.txt)
-O índice gerado será salvo no arquivo indice_remissivo.txt e terá o seguinte formato:
+## Exemplo de Saída (`indice_remissivo.txt`)
 
-css
+O índice gerado será salvo no arquivo `indice_remissivo.txt` e terá o seguinte formato:
 
-Copiar
-
-Editar
-
+```text
 java [1, 5, 7]
-
 hash [3, 10]
-
 index [2, 8, 15]
+```
 
 Onde:
 
-Cada linha mostra a palavra e as linhas onde ela ocorre no texto.
-Contribuições
-Se você deseja contribuir para este projeto, fique à vontade para fazer um fork e enviar um pull request.
+- Cada linha mostra a palavra e as linhas onde ela ocorre no texto.
 
+## Contribuições
+
+Se você deseja contribuir para este projeto, fique à vontade para fazer um fork e enviar um pull request.
